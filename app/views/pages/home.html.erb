@@ -1,11 +1,15 @@
-<div class="hero-unit">
-	<div class="row">
-	  <div class="span2"><h2>Filter</h2></div>
-	  <div class="span8"><h1>Welcome to PedalPushr!  \m/</h1>
-			<p>Like Etsy for your guitar feet tools.
-				<%= link_to "PedalPushr", "http://PedalPushr.com" %>
-			</p>
-			<br><%= link_to "Sign up now", "#", class: "btn btn-primary btn-large" %></br>
+<% if user_signed_in? %>
+	<h1>PUT A SWEET APP HERE</h1>
+<% else %>
+	<div class="hero-unit">
+		<div class="row">
+		  <div class="span2"><h2>Filter</h2></div>
+		  <div class="span8"><h1>Welcome to PedalPushr!  \m/</h1>
+				<p>Like Etsy for your guitar feet tools.
+					<%= link_to "PedalPushr", "http://PedalPushr.com" %>
+				</p>
+				<br><%= link_to "Sign up now", new_user_registration_path, class: "btn btn-primary btn-large" %></br>
+			</div>
 		</div>
 	</div>
-</div>
+<% end %>
