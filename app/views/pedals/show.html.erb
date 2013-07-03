@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @pedal.title %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @pedal.rating %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @pedal.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_pedal_path(@pedal) %> |
+<%= link_to 'Back', pedals_path %>

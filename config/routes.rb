@@ -1,4 +1,7 @@
 PedalPushr::Application.routes.draw do
+  resources :pedals
+
+
   devise_for :users
 
   get 'about' => 'pages#about'
