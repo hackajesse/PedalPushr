@@ -1,0 +1,8 @@
+<tr>
+  <td><%= pedal.title %></td>
+  <td><%= pedal.rating %></td>
+  <td><%= pedal.price %></td>
+  <td><%= link_to 'Show', pedal %></td>
+  <td><%= link_to 'Edit', edit_pedal_path(pedal) %></td>
+  <td><%= link_to 'Destroy', pedal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

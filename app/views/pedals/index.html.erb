@@ -1,25 +1,20 @@
 <h1>Listing pedals</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Rating</th>
-    <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Rating</th>
+      <th>Price</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<% @pedals.each do |pedal| %>
-  <tr>
-    <td><%= pedal.title %></td>
-    <td><%= pedal.rating %></td>
-    <td><%= pedal.price %></td>
-    <td><%= link_to 'Show', pedal %></td>
-    <td><%= link_to 'Edit', edit_pedal_path(pedal) %></td>
-    <td><%= link_to 'Destroy', pedal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <tbody>
+    <%= render @pedals %>
+  </tbody>
 </table>
 
 <br />

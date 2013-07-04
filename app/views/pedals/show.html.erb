@@ -1,20 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="span6 offset3">
+		<div class="well">
+			<p>
+			  <%= @pedal.title %>
+			</p>
+			<p>
+			  <%= @pedal.rating %>
+			</p>
+			<p>
+			  <%= @pedal.price %>
+			</p>
+			<%= link_to 'Edit', edit_pedal_path(@pedal) %> |
+			<%= link_to 'Back', pedals_path %>
+		</div>
+	</div>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @pedal.title %>
-</p>
 
-<p>
-  <b>Rating:</b>
-  <%= @pedal.rating %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @pedal.price %>
-</p>
-
-
-<%= link_to 'Edit', edit_pedal_path(@pedal) %> |
-<%= link_to 'Back', pedals_path %>
