@@ -3,4 +3,7 @@ class Pedal < ActiveRecord::Base
 
 # check out Rails validations for length, presence, etc.
   validates :title, presence: :true, length: { maximum: 100}
+
+  belongs_to :user
+  validates :user_id, presence: true
 end

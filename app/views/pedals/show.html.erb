@@ -10,7 +10,12 @@
 			<p>
 			  <%= @pedal.price %>
 			</p>
-			<%= link_to 'Edit', edit_pedal_path(@pedal) %> |
+				<p>
+			  <%= @pedal.user.name %>
+			</p>
+			<% if current_user == @pedal.user %>
+				<%= link_to 'Edit', edit_pedal_path(@pedal) %> |
+			<% end %>
 			<%= link_to 'Back', pedals_path %>
 		</div>
 	</div>

@@ -1,4 +1,6 @@
 class PedalsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
+
   # GET /pedals
   # GET /pedals.json
   def index
@@ -24,7 +26,8 @@ class PedalsController < ApplicationController
   # GET /pedals/new
   # GET /pedals/new.json
   def new
-    @pedal = Pedal.new
+    # this assigns new pedals to the current user
+    @pedal = current_user.pedals.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +37,14 @@ class PedalsController < ApplicationController
 
   # GET /pedals/1/edit
   def edit
-    @pedal = Pedal.find(params[:id])
+    @pedal = current_user.pedals.find(params[:id])
   end
 
   # POST /pedals
   # POST /pedals.json
   def create
-    @pedal = Pedal.new(params[:pedal])
+    # this assigns the pedal to the current user
+    @pedal = current_user.pedals.new(params[:pedal])
 
     respond_to do |format|
       if @pedal.save
@@ -56,7 +60,7 @@ class PedalsController < ApplicationController
   # PUT /pedals/1
   # PUT /pedals/1.json
   def update
-    @pedal = Pedal.find(params[:id])
+    @pedal = current_user.pedals.find(params[:id])
 
     respond_to do |format|
       if @pedal.update_attributes(params[:pedal])
@@ -72,7 +76,7 @@ class PedalsController < ApplicationController
   # DELETE /pedals/1
   # DELETE /pedals/1.json
   def destroy
-    @pedal = Pedal.find(params[:id])
+    @pedal = current_user.pedals.find(params[:id])
     @pedal.destroy
 
     respond_to do |format|
