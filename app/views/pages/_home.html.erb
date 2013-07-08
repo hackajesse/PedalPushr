@@ -1,6 +1,4 @@
-<% if user_signed_in? %>
-	<h1>PUT A SWEET APP HERE</h1>
-<% else %>
+<% unless user_signed_in? %>
 	<div class="hero-unit">
 		<div class="row">
 		  <div class="span2"><h2>Filter</h2></div>
