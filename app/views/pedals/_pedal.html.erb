@@ -1,11 +1,19 @@
-<tr>
-  <td><%= image_tag pedal.image(:medium) %></td>
-  <td><%= pedal.title %></td>
-  <td><%= pedal.rating %></td>
-  <td><%= pedal.price %></td>
-  <td><%= link_to 'Show', pedal %></td>
-  <% if current_user == pedal.user %>
-	  <td><%= link_to 'Edit', edit_pedal_path(pedal) %></td>
-	  <td><%= link_to 'Destroy', pedal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class="box">
+	 <%= link_to (image_tag pedal.image(:medium)), pedal %>
+	 <p class="description">
+		<%= pedal.title %>
+		<%= pedal.rating %>
+		<%= pedal.price %>
+	</p>
+	<p>
+		<strong>
+			Posted by <%= pedal.user.name %>
+		</strong>
+	</p>
+	<% if current_user == pedal.user %>
+		<p>
+			<%= link_to 'Edit', edit_pedal_path(pedal) %>
+			<%= link_to 'Destroy', pedal, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</p>
 	<% end %>
-</tr>
+</div>

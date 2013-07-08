@@ -4,7 +4,7 @@ class PedalsController < ApplicationController
   # GET /pedals
   # GET /pedals.json
   def index
-    @pedals = Pedal.all
+    @pedals = Pedal.order("created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb
