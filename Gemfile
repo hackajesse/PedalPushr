@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
+ruby "2.0.0"
 gem 'rails', '3.2.13'
 gem 'jquery-rails', '2.0.2'
 gem 'devise'
 gem 'simple_form'
 gem "paperclip", "~> 3.0"
+gem 'aws-sdk'
 
 group :production do
 	gem 'pg'
