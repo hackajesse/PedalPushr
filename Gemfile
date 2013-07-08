@@ -1,10 +1,17 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'jquery-rails', '2.0.2'
+gem 'devise'
+gem 'simple_form'
+gem "paperclip", "~> 3.0"
 
-group :development do
+group :production do
+	gem 'pg'
+end
+
+group :development, :test do
   gem 'sqlite3', '1.3.5'
-  gem  "pg", "~> 0.15.1"
 end
 
 
@@ -17,9 +24,7 @@ group :assets do
   gem 'uglifier', '1.2.3'
 end
 
-gem 'jquery-rails', '2.0.2'
-gem 'devise'
-gem 'simple_form'
+
 
 
 # To use ActiveModel has_secure_password

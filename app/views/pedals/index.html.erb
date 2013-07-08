@@ -3,20 +3,19 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Image</th>
       <th>Title</th>
       <th>Rating</th>
       <th>Price</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
-
   <tbody>
     <%= render @pedals %>
   </tbody>
 </table>
 
-<br />
+<br/>
 
 <%= link_to 'New Pedal', new_pedal_path %>
