@@ -1,0 +1,10 @@
+$boxes = $('<%= j render(@pedals) %>')
+
+$('#pedals').append( $boxes ).imagesLoaded( function(){
+    $('#pedals').masonry( 'reload');
+});
+<% if @pedals.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate(@pedals) %>');
+<% else %>
+    $('.pagination').remove();
+<% end %>
