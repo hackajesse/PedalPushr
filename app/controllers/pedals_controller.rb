@@ -4,7 +4,7 @@ class PedalsController < ApplicationController
   # GET /pedals
   # GET /pedals.json
   def index
-    @pedals = Pedal.order("created_at desc")
+    @pedals = Pedal.order("created_at desc").page(params[:page]).per_page(20)
 
     respond_to do |format|
       format.html # index.html.erb

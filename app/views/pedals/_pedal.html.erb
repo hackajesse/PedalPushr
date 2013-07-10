@@ -1,15 +1,16 @@
 <div class="box">
-	 <%= link_to (image_tag pedal.image(:medium)), pedal %>
-	 <p class="description">
-		<%= pedal.title %>
-		<%= pedal.rating %>
-		<%= pedal.price %>
-	</p>
+	<%= link_to (image_tag pedal.image(:medium)), pedal %>
 	<p>
-		<strong>
-			Posted by <%= pedal.user.name %>
-		</strong>
+			<%= pedal.title %>
 	</p>
+		<p style="text-align:left;">
+			&nbsp;&nbsp;&nbsp;<%= pedal.rating %>
+			<span style="float:right;"><%= pedal.price %>&nbsp;&nbsp;&nbsp;
+		</p>
+	</p>
+	<div style="text-align:right">
+			Made by <%= pedal.user.name %>
+	</div>
 	<% if current_user == pedal.user %>
 		<p>
 			<%= link_to 'Edit', edit_pedal_path(pedal) %>
