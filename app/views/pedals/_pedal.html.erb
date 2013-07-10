@@ -9,7 +9,7 @@
 		</p>
 	</p>
 	<div style="text-align:right">
-			Made by <%= pedal.user.name %>
+			Made by <%= link_to pedal.user.name, pedal.user %>
 	</div>
 	<% if current_user == pedal.user %>
 		<p>
